@@ -6,14 +6,13 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        java: ['8','11.0.x']
+        java: ['8','11']
     steps:
       - uses: actions/checkout@v2
       - name: Setup Java
       - uses: actions/setup-java@v1
         with:
-          go-version: ${{ matrix.java }}
-
+          java-version: ${{ matrix.java }}
       - name: Build with Grable
         run: gradle build
 
