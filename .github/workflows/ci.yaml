@@ -18,6 +18,11 @@ jobs:
       - name: Build with Grable
         run: ./gradlew build
 
+      - uses: actions/upload-artifact@v2
+        with:
+          name: Package
+          path: build/libs
+
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v1
 
