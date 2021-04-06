@@ -2,6 +2,8 @@ FROM openjdk:8-jdk-alpine
 
 WORKDIR /usr/src/app
 
+COPY . .
+
 RUN ./gradlew build
 
 ARG JAR_FILE=build/libs/\*.jar
