@@ -6,8 +6,11 @@ COPY . .
 
 RUN ./gradlew build
 
-ARG JAR_FILE=/usr/src/app/build/libs/\*.jar
+RUN pwd
 
-COPY ${JAR_FILE} app.jar
+RUN ls -la
+#ARG JAR_FILE=build/libs/\*.jar
+
+#COPY ${JAR_FILE} app.jar
 
 ENTRYPOINT ["java","-jar", "app.jar"]
